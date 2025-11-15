@@ -1,11 +1,11 @@
-from app.errors import VaccineError, NotWearingMaskError
+from app.errors import (VaccineError, NotWearingMaskError)
 from app.cafe import Cafe
 
 
 def go_to_cafe(friends: list, cafe: Cafe) -> str:
     bolniye = []
     masks_to_buy = 0
-    for i, friend in enumerate(friends):
+    for friend in friends:
         try:
             cafe.visit_cafe(friend)
         except VaccineError:
